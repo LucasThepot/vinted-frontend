@@ -7,6 +7,7 @@ import "./HomePage.css";
 // Pages
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
+import SignUp from "./pages/SignUp";
 
 // Components
 import Header from "./components/Header";
@@ -22,6 +23,7 @@ function App() {
         {/* Pour chaque route, je précise son chemin et le composant qu'elle doit afficher */}
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </Router>
   );
