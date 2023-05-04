@@ -9,7 +9,7 @@ const Header = () => {
       </Link>
       <button>s'inscrire</button>
       <button>se connecter</button>
-      <button>vends tes articles</button>
+      <button className="lastButton">vends tes articles</button>
     </header>
   );
 };

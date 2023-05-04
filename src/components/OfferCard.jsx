@@ -6,9 +6,9 @@ const OfferCard = ({ offerData }) => {
   return (
     // Je navigue vers /offer/l'id de l'offre au clique sur une offre
     <Link to={`/offer/${offerData._id}`}>
-      <article>
+      <article className="disposition">
         {/*  en dessous, on détermine la structure de notre composant OfferCard, qui est un "résumé" des offres sur notre page homme  */}
-        <div>
+        <div className="infosOwner">
           {/* Si le vendeur a un avatar, je l'affiche */}
           {owner.account.avatar && (
             <img src={owner.account.avatar.secure_url} alt="" />
@@ -17,7 +17,7 @@ const OfferCard = ({ offerData }) => {
           <span>{owner.account.username}</span>
         </div>
         {/* j'affiche l'image du produit en vente */}
-        <img src={product_image.secure_url} alt="" />
+        <img className="imgOfProduct" src={product_image.secure_url} alt="" />
         {/* j'affiche son prix */}
         <p>{product_price} €</p>
         <div>

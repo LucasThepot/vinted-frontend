@@ -1,0 +1,23 @@
+.headerstyle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+button {
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 120px;
+  height: 33px;
+  background-color: white;
+  border: #2cb1ba solid 2px;
+  color: #2cb1ba;
+}
+
+.lastButton {
+  background-color: #2cb1ba;
+  color: white;
+  height: 34px;
+  text-align: center;
+  line-height: 12px;
+}

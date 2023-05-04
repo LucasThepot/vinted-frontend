@@ -1,0 +1,16 @@
+.infosOwner img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.disposition {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgOfProduct {
+  height: 360px;
+  width: 240px;
+  object-fit: cover;
+}
