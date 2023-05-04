@@ -1,4 +1,3 @@
-//import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -19,7 +18,7 @@ function App() {
       <Routes>
         {/* Pour chaque route, je précise son chemin et le composant qu'elle doit afficher */}
         <Route path="/" element={<Home />} />
-        <Route path="/offers" element={<Offer />} />
+        <Route path="/offers/:id" element={<Offer />} />
       </Routes>
     </Router>
   );
