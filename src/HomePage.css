@@ -7,10 +7,29 @@
 .disposition {
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .imgOfProduct {
   height: 360px;
   width: 240px;
   object-fit: cover;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.test {
+  color: #999999;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.price {
+  margin: 10px 0px 8px;
+
+  color: black;
 }

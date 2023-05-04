@@ -36,10 +36,12 @@ const Home = () => {
     <p>Loading ...</p>
   ) : (
     <div>
-      <p>Nombre d'offres : {data.count}</p>
-      {data.offers.map((offer) => {
-        return <OfferCard key={offer._id} offerData={offer} />;
-      })}
+      <div className="wrapper">
+        <p>Nombre d'offres : {data.count}</p>
+        {data.offers.map((offer) => {
+          return <OfferCard key={offer._id} offerData={offer} />;
+        })}
+      </div>
     </div>
   );
 };

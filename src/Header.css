@@ -1,7 +1,31 @@
 .headerstyle {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.headercontainer {
+  width: 1280px;
+  height: 90px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
+  margin: 10px 0px;
+
+  width: 150px;
+  height: 65px;
+}
+
+.researchBar {
+  margin-top: 15px;
+  height: 50px;
+  width: 630px;
+  background-color: #f5f6f7;
+  border-style: none;
+
+  font-size: larger;
+  font-weight: bold;
 }
 
 button {

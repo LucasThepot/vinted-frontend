@@ -33,11 +33,16 @@ const Offer = () => {
     <p>Loading...</p>
   ) : (
     <div className="body">
-      <img src={data.product_image.secure_url} alt="" />{" "}
+      <img
+        className="productImage"
+        src={data.product_image.secure_url}
+        alt=""
+      />
       {/* j'affiche mon image */}
       <div className="description">
         <div className="descriptionInfos">
-          <p>{data.product_price} €</p> {/* j'affiche mon prix */}
+          <p className="offerPrice">{data.product_price} €</p>{" "}
+          {/* j'affiche mon prix */}
           {/* Je parcours product_details */}
           {data.product_details.map((detail, index) => {
             // Je récupère le nom de la clef de detail
@@ -45,13 +50,14 @@ const Offer = () => {
             return (
               <div key={index}>
                 {/* J'affiche le nom de la clef  */}
-                <span>{keyName} : </span>
+                <span className="detailName">{keyName} : </span>
                 {/* et son contenu */}
-                <span>{detail[keyName]}</span>
+                <span className="detail">{detail[keyName]}</span>
               </div>
             );
           })}
         </div>
+        <button className="purchaseButton">Acheter</button>
       </div>
     </div>
   );

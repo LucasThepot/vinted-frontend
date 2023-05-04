@@ -5,7 +5,7 @@ const OfferCard = ({ offerData }) => {
 
   return (
     // Je navigue vers /offer/l'id de l'offre au clique sur une offre
-    <Link to={`/offer/${offerData._id}`}>
+    <Link className="test" to={`/offer/${offerData._id}`}>
       <article className="disposition">
         {/*  en dessous, on détermine la structure de notre composant OfferCard, qui est un "résumé" des offres sur notre page homme  */}
         <div className="infosOwner">
@@ -19,7 +19,7 @@ const OfferCard = ({ offerData }) => {
         {/* j'affiche l'image du produit en vente */}
         <img className="imgOfProduct" src={product_image.secure_url} alt="" />
         {/* j'affiche son prix */}
-        <p>{product_price} €</p>
+        <p className="price">{product_price} €</p>
         <div>
           {/* Je parcours product_detail pour afficher conditionner l'affichage des éléments*/}
           {product_details.map((detail, index) => {
