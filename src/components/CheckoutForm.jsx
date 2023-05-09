@@ -12,6 +12,46 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   // Permetra de récupérer les données bancaires de l'utilisateur
   const elements = useElements();
-  return;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      setIsLoading(true);
+      // Je récupère le contenu de l'input CardElement
+      const cardElement = elements.getElement(CardElement);
+      //   J'envoie ces informations à stripe pour qu'il valide le code de carte de l'utilisateur et qu'il me renvoie un token.
+      const stripeResponse = await stripe.createToken(cardElement, {
+        name: "L'id de l'acheteur",
+      });
+      console.log(stripeResponse);
+      const stripeToken = stripeResponse.token.id;
+      //   Je fais une requête à mon back en envoyant le stripetoken
+      const responseFromBackend = await axios.post(
+        "http://localhost:3000/payment",
+        { stripeToken: stripeToken }
+      );
+      console.log(responseFromBackend.data);
+      //   Si le back me répond succeeded
+      if (responseFromBackend.data === "succeeded") {
+        // Je modifie mes states isLoading et Completed
+        setIsLoading(false);
+        setCompleted(true);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>Formulaire de paiement</h1>
+      <CardElement />
+      {completed ? (
+        <p>Paiement validé</p>
+      ) : (
+        <button type="submit" disabled={isLoading}>
+          Pay
+        </button>
+      )}
+    </form>
+  );
 };
 export default CheckoutForm;

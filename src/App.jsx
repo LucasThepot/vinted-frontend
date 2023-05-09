@@ -10,6 +10,7 @@ import "./CSS/HomePage.css";
 import "./CSS/SignupPage.css";
 import "./CSS/LoginPage.css";
 import "./CSS/PublishPage.css";
+import "./CSS/PaymentPage.css";
 
 // Import Pages
 import Home from "./pages/Home";
