@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Cookies from "js-cookie";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -15,9 +14,10 @@ const SignUp = ({ handleToken }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="container">
       <p>S'inscrire</p>
       <form
+        className="formContainer"
         onSubmit={async (event) => {
           event.preventDefault();
           //   Je fais disparaitre le message d'erreur
@@ -57,6 +57,7 @@ const SignUp = ({ handleToken }) => {
         }}
       >
         <input
+          className="champs"
           type="text"
           placeholder="Nom d'utilisateur"
           value={username}
@@ -65,15 +66,16 @@ const SignUp = ({ handleToken }) => {
           }}
         />
         <input
+          className="champs"
           placeholder="Email"
           type="email"
-          name="email"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
         <input
+          className="champs"
           placeholder="Password"
           type="password"
           //value={password}
@@ -81,8 +83,9 @@ const SignUp = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <div>
+        <div className="checkboxstyle">
           <input
+            className="champs"
             id="newsletter"
             type="checkbox"
             onChange={() => {
@@ -90,12 +93,19 @@ const SignUp = ({ handleToken }) => {
             }}
             checked={newsletter}
           />
+          {/* Label pour lier mon input a son text */}
           <label htmlFor="newsletter">S'inscrire à notre newsletter</label>
         </div>
-        <input type="submit" value="S'inscrire"></input>
+        <input
+          className="signupbutton"
+          type="submit"
+          value="S'inscrire"
+        ></input>
       </form>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <Link className="linktologinstyle" to="/login">
+        Tu as déjà un compte ? Connecte-toi !
+      </Link>
     </div>
   );
 };

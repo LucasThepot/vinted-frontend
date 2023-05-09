@@ -11,10 +11,11 @@ const Login = ({ handleToken }) => {
   return (
     <div>
       <h1>Se connecter</h1>
-      <form
+      <form // on englobe tous nos input dans le form
         onSubmit={async (event) => {
-          event.preventDefault();
+          event.preventDefault(); // on empêche le refresh de la page à l'envoi du form
           try {
+            // requete à la BDD, avec envoi des query
             const response = await axios.post(
               "https://lereacteur-vinted-api.herokuapp.com/user/login",
               {
@@ -22,6 +23,7 @@ const Login = ({ handleToken }) => {
                 password: password,
               }
             );
+            //si un token existe en BDD, redirection vers "/"
             if (response.data.token) {
               handleToken(response.data.token);
               navigate("/");
