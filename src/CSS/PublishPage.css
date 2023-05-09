@@ -1,0 +1,36 @@
+.publishFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+.fileZone {
+  border: solid black 2px;
+}
+
+#title {
+  margin-top: 20px;
+}
+
+#brand {
+  margin-top: 20px;
+}
+
+#price {
+  margin-top: 20px;
+}
+
+.addbutton {
+  height: 40px;
+  width: 80px;
+  margin-top: 30px;
+  border: none;
+  background-color: #2cb1ba;
+  color: aliceblue;
+}

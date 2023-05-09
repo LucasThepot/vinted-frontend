@@ -51,7 +51,7 @@ const SignUp = ({ handleToken }) => {
               );
               //   Si je reçois un message d'erreur "Missing parameters"
             } else if (error.response.data.message === "Missing parameters") {
-              setErrorMessage("Veuillez remplir tous les champs :)");
+              setErrorMessage("Veuillez renseigner tous les champs");
             }
           }
         }}

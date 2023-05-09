@@ -9,9 +9,10 @@ const Login = ({ handleToken }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="wrapperForm">
       <h1>Se connecter</h1>
-      <form // on englobe tous nos input dans le form
+      <form
+        className="inputStyle" // on englobe tous nos input dans le form
         onSubmit={async (event) => {
           event.preventDefault(); // on empêche le refresh de la page à l'envoi du form
           try {
@@ -37,6 +38,7 @@ const Login = ({ handleToken }) => {
       >
         <input
           type="email"
+          placeholder="Adresse email"
           onChange={(event) => {
             setEmail(event.target.value);
           }}
@@ -44,11 +46,12 @@ const Login = ({ handleToken }) => {
         />
         <input
           type="password"
+          placeholder="Mot de passe"
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" />
+        <input className="loginButton" type="submit" value="Se connecter" />
       </form>
     </div>
   );

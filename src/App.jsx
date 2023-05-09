@@ -7,7 +7,9 @@ import "./CSS/App.css";
 import "./CSS/OfferPage.css";
 import "./CSS/Header.css";
 import "./CSS/HomePage.css";
-import "./CSS/Signup.css";
+import "./CSS/SignupPage.css";
+import "./CSS/LoginPage.css";
+import "./CSS/PublishPage.css";
 
 // Import Pages
 import Home from "./pages/Home";
@@ -15,6 +17,7 @@ import Offer from "./pages/Offer";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 // Components
 import Header from "./components/Header";
@@ -55,6 +58,7 @@ function App() {
         <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   );

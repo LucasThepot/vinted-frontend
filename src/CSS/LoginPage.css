@@ -1,0 +1,35 @@
+.wrapperForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.wrapperForm h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.inputStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputStyle input {
+  font-size: 16px;
+  line-height: 30px;
+  width: 270px;
+  margin: 25px;
+  border-style: none;
+  border-bottom: 1px rgb(240, 74, 74) solid;
+}
+
+.loginButton.loginButton {
+  height: 50px;
+  width: 275px;
+  background-color: #2cb1ba;
+  border-style: none;
+  border-radius: 5px;
+  color: aliceblue;
+}

@@ -4,8 +4,9 @@ import axios from "axios";
 
 //components
 import InputPublish from "../components/InputPublish";
-
+// on passe token en props à la func publish
 const Publish = ({ token }) => {
+  // on défini les states de tous nos input
   const [picture, setPicture] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -17,8 +18,10 @@ const Publish = ({ token }) => {
   const [price, setPrice] = useState(0);
 
   const handleSubmit = async (event) => {
+    // on empêche le rafraichissement de la page à l'envoi du form
     event.preventDefault();
     try {
+      // on crée un new formdata on lui donne les pairs clés valeurs suivantes
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
@@ -29,8 +32,10 @@ const Publish = ({ token }) => {
       formData.append("size", size);
       formData.append("color", color);
       formData.append("picture", picture);
+      // on stock la réponse de l'API dans response
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        // en 2eme argu on envoi notre formdata et en 3eme le token pour s'authentifier
         formData,
         {
           headers: {
@@ -44,13 +49,16 @@ const Publish = ({ token }) => {
       console.log(error.message);
     }
   };
-
+  // si Token existe on retourne notre page, sinon on est redirigé vers /login
   return token ? (
-    <form onSubmit={handleSubmit}>
+    <form className="publishFormWrapper" onSubmit={handleSubmit}>
       <h1>Vends ton Article</h1>
       <div>
-        <label htmlFor="filePicker"></label>
-        <input // a display none dans CSS pour styliser le label à la place
+        <label className="fileZone" htmlFor="filePicker">
+          Ajoute une photo
+        </label>
+        <input
+          className="hide"
           id="filePicker"
           type="file"
           onChange={(event) => {
@@ -60,6 +68,7 @@ const Publish = ({ token }) => {
         {/* si une image est ajoutée on génére un URL pour visualiser cette image */}
         {picture && <img src={URL.createObjectURL(picture)} alt="product" />}
       </div>
+      {/* on appelle notre composant InputPublish autant de fois que necessaire et on leur donne les props adaptés */}
       <InputPublish
         label="Titre"
         id="title"
@@ -116,7 +125,7 @@ const Publish = ({ token }) => {
         state={price}
         setState={setPrice}
       />
-      <input type="submit" value="Ajouter" />
+      <input className="addbutton" type="submit" value="Ajouter" />
     </form>
   ) : (
     <Navigate to="/login" />

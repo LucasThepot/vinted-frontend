@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"; // on importe useParams pour pouvoir récupérer l'id présent dans l'URL parent
+import { useParams, Link } from "react-router-dom"; // on importe useParams pour pouvoir récupérer l'id présent dans l'URL parent
 import { useEffect, useState } from "react"; // import pour l'état de mes data
 import axios from "axios"; // import d'axios pour faire la requete au back et récupérer la data
 
@@ -57,7 +57,10 @@ const Offer = () => {
             );
           })}
         </div>
-        <button className="purchaseButton">Acheter</button>
+
+        <Link to="/payment">
+          <button className="purchaseButton">Acheter</button>
+        </Link>
       </div>
     </div>
   );
